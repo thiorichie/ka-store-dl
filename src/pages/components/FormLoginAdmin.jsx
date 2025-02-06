@@ -15,6 +15,7 @@ function FormLoginAdmin() {
   const onSubmit = async(data) => {
     try{
       const login = await axios.post('https://ka-store-backend-production.up.railway.app/api/login', data, {withCredentials: true})
+      console.log(login.data)
       alert('Login successful!');
       navigate('/admin')
     }
