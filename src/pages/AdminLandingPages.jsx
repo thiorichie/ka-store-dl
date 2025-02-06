@@ -21,8 +21,8 @@ function HomePage() {
                 console.log(checkToken)
             }
             catch (e){
-                alert("Error decoding the auth token", e);
-                console.log(e)
+                console.error('Login error:', e.response ? e.response.data : e.message);
+                alert(e.response ? e.response.data.message : 'Unknown error');
                 navigate("/login")
             }
         }
